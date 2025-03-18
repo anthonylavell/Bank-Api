@@ -1,0 +1,15 @@
+.custom-file-label::after {
+    background-color: lightgray;
+}
+
+.margin-b{
+    margin-bottom: 2rem !important;
+}
+
+.radio-margin{
+    margin: 20px 0px 10px 0px;
+}
+
+#showProgramId, #showFormName{
+    max-width: 37%;
+}
