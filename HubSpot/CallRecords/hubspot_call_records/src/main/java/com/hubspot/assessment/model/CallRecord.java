@@ -1,7 +1,5 @@
 package com.hubspot.assessment.model;
 
-import org.json.JSONObject;
-
 // Models
 public class CallRecord {
     private int customerId;
@@ -12,7 +10,6 @@ public class CallRecord {
     public CallRecord(){
 
     }
-    // Getters
     public int getCustomerId() {
         return customerId;
     }
