@@ -62,8 +62,8 @@ public final class CalculateConcurrentCall {
 
             // Sort events by timestamp (and if timestamps are equal, process end events before start events)
             events.sort((e1, e2) -> {
-                if (e1.getTimestamp() != e2.getTimestamp()) {
-                    return Long.compare(e1.getTimestamp(), e2.getTimestamp());
+                if (e1.getTimeStamp() != e2.getTimeStamp()) {
+                    return Long.compare(e1.getTimeStamp(), e2.getTimeStamp());
                 }
                 // For same timestamp, put end events first
                 return Boolean.compare(e1.isStart(), e2.isStart());
@@ -83,7 +83,7 @@ public final class CalculateConcurrentCall {
 
                     if (currentConcurrent > maxConcurrent) {
                         maxConcurrent = currentConcurrent;
-                        maxTimestamp = event.getTimestamp();
+                        maxTimestamp = event.getTimeStamp();
                         maxCallIds = new HashSet<>(currentCallIds);
                     }
                 } else {
