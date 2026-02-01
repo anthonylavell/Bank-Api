@@ -7,15 +7,23 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccountService {
-    @Autowired
-    IAccountRepository accountRepo;
+
+    private final IAccountRepository accountRepo;
+
+    public AccountService(IAccountRepository accountRepo) {
+        this.accountRepo = accountRepo;
+    }
 
     public void save(AccountEntity accountEntity){
         accountRepo.save(accountEntity);
     }
 
     public AccountEntity getAccountById(String id){
-        return accountRepo.findById(id).isEmpty()?null:accountRepo.findById(id).get();
+        return accountRepo.findById(id).orElse(null);
+    }
+
+    public boolean exists(String id){
+        return accountRepo.existsById(id);
     }
 
 }

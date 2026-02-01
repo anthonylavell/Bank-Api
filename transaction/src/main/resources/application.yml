@@ -20,5 +20,5 @@ spring:
 
 logging:
   level:
-    org.flywaydb: debug
-    org.hibernate.SQL: debug
+    org.flywaydb: info
+    org.hibernate.SQL: info

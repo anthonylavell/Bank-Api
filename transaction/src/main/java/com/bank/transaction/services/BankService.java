@@ -8,9 +8,13 @@ import java.util.List;
 
 @Service
 public class BankService {
+    private final AccountProcess accountProcess;
+
+    public BankService(AccountProcess accountProcess) {
+        this.accountProcess = accountProcess;
+    }
     @Transactional
     public List<String>process(List<String>commands){
-        AccountProcess accountProcess = new AccountProcess();
         return accountProcess.process(commands);
     }
 }
